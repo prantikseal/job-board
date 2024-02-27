@@ -11,7 +11,7 @@ const NavBar = () => {
   useEffect(() => {
     const handleResize = () => {
       // Close the mobile menu when the window is resized
-      setMobileMenuOpen(true);
+      setMobileMenuOpen(false);
     };
 
     window.addEventListener("resize", handleResize);
@@ -50,7 +50,7 @@ const NavBar = () => {
             className={`browse-by-category group md:hidden block ${
               isMobileMenuOpen
                 ? "relative"
-                : "absolute top-20 left-50 w-screen bg-white z-10"
+                : "absolute top-20 left-20 w-screen bg-white z-10"
             }`}
           >
             {/* <button className="bg-white px-3 py-2 font-normal md:block hidden"> */}
