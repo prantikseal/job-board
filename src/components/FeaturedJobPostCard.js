@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 const JOB_TOKEN = `ShqzmndKzRu8xwRDxiTkGQqmgTqeVGoC`;
 const JOB_URL = `https://web3.career/api/v1`;
 
-const GetRecentJobsList = () => {
+const FeaturedJobPostCard = () => {
   const [jobs, setJobs] = useState([]);
-  const limit = 6;
+  const limit = 3;
 
   useEffect(() => {
-    fetch(`${JOB_URL}?token=${JOB_TOKEN}&limit=${limit}&remote=true`)
+    fetch(`${JOB_URL}?token=${JOB_TOKEN}&limit=${limit}&tag=dev`)
       .then((res) => res.json())
 
       .then((data) => {
@@ -22,15 +22,17 @@ const GetRecentJobsList = () => {
         console.log(err);
       });
   }, []);
+
+
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
     }
   return (
     <div className="recent-jobs-section">
-      <h3 className=" text-2xl font-semibold mb-5">Recent Job Posts</h3>
+      <h3 className=" text-2xl font-semibold mb-5">Featured Job Posts</h3>
       {jobs.length > 0 ? (
         // animate on hover shadow
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 justify-between">
           {jobs?.map((job) => {
             return (
               <Link
@@ -87,4 +89,4 @@ const GetRecentJobsList = () => {
   );
 };
 
-export default GetRecentJobsList;
+export default FeaturedJobPostCard;

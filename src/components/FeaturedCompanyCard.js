@@ -12,6 +12,7 @@ const FeaturedCompanyCard = () => {
 
   useEffect(() => {
     fetch(`${JOB_URL}?token=${JOB_TOKEN}&limit=${limit}&remote=true&tag=dev`)
+
       .then((res) => res.json())
 
       .then((data) => {
@@ -32,7 +33,7 @@ const FeaturedCompanyCard = () => {
             {company?.map((company) => {
               return (
                 <Link href='/' key={company.id} className="card flex gap-4 items-center">
-                  <div className="h-12 w-12 rounded-lg text-center bg-slate-600 text-white font-bold flex justify-center items-center">
+                  <div className="h-12 min-w-12 rounded-lg text-center flex bg-slate-600 text-white font-bold justify-center items-center">
                   <span className="">{company.company.charAt(0).toUpperCase()}</span>
                   </div>
                  <p className="font-medium text-lg">{company.company}</p>
