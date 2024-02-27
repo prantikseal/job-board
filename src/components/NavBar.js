@@ -43,14 +43,14 @@ const NavBar = () => {
         </div>
         <div
           className={`category-and-post-a-job flex gap-4 ${
-            isMobileMenuOpen ? "hidden" : "block"
+            isMobileMenuOpen ? "block" : "hidden"
           }`}
         >
           <div
             className={`browse-by-category group md:hidden block ${
               isMobileMenuOpen
-                ? "relative"
-                : "absolute top-20 left-20 w-screen bg-white z-10"
+                ? "absolute top-20 left-0 bg-white z-10 shadow-lg"
+                : "relative"
             }`}
           >
             {/* <button className="bg-white px-3 py-2 font-normal md:block hidden"> */}
